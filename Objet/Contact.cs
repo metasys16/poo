@@ -8,15 +8,15 @@ namespace Objet
 {
     class Contact
     {
-        // attributs
+        // attributs !!!!!!!!!!!!!! PRIVES !!!!!!!!!!!!!!!
         private String nom;
         private String prenom;
         private String telephone;
         private String mail;
         private DateTime dateDeNaissance;
 
-        // getter et setter
-        public string Nom    // the Name property
+        // Accesseur get , accesseur set
+        public string Nom  // propriété Nom
         {
             get
             {
@@ -35,12 +35,26 @@ namespace Objet
             this.prenom = prenom;
             this.telephone = telephone;
             this.mail = mail;
+        }
 
-            Console.WriteLine("coucou je suis dans le constructeur de la classe contact");
-            Console.WriteLine(this.nom);
-            Console.WriteLine(this.prenom);
-            Console.WriteLine(this.telephone);
-            Console.WriteLine(this.mail);
+        // Méthodes
+        public void SePresenter()
+        {
+            String message;
+
+            message = "COUCOU je suis : ";
+
+            Console.WriteLine(message + prenom + " " + nom + " telephone : " + telephone);
+        }
+
+        public void SetTelephone(String nouveau_telephone)
+        {
+            this.telephone = nouveau_telephone;
+        }
+
+        public String GetTelephone()
+        {
+            return this.telephone;
         }
     }
 }
