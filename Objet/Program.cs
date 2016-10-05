@@ -10,6 +10,7 @@ namespace Objet
     {
         static void Main(string[] args)
         {
+            Contact contact = new Contact("Moulhoud", "Jean", "06363737364", "pereira.mickael1@gmail.com");
         }
     }
 }
