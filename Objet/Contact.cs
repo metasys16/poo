@@ -38,6 +38,17 @@ namespace Objet
             this.mail = mail;
         }
 
+        public Contact(String prenom, String nom)
+        {
+            this.prenom = prenom;
+            this.nom = nom;
+        }
+
+        public Contact(String line)
+        {
+
+        }
+
         // Méthodes
         public void SePresenter()
         {
@@ -46,6 +57,15 @@ namespace Objet
             message = "COUCOU je suis : ";
 
             Console.WriteLine(message + prenom + " " + nom + " telephone : " + telephone);
+        }
+
+        public void SePresenter(bool versionCourte)
+        {
+            String message;
+
+            message = "Version courte : ";
+
+            Console.WriteLine(message + prenom + " " + nom);
         }
 
         public void SetTelephone(String nouveau_telephone)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Objet
 { 
@@ -11,14 +12,32 @@ namespace Objet
         static void Main(string[] args)
         {
             // INSTANCE(S) des classes
-            Contact contact = new Contact("Moulhoud", "Jean", "06363737364", "pereira.mickael1@gmail.com");
+            
             Contact enseignant = new Enseignant("Groot", "Je s'appele", "06363737364", "pereira.mickael1@gmail.com");
+            Contact contact = new Contact("jean", "NomDeFamille", "06363737364", "pereira.mickael1@gmail.com");
+            //contact.EnregistrerContact();
+            
+            StreamReader file;
+            string line;
 
-            contact.EnregistrerContact();
+            // Lire le fichier
+            file = new StreamReader("C:/Users/Mike/Documents/Visual Studio 2015/Projects/Objet/Contacts.txt", true);
+
+            // system IO a convertir en string
+            line = file.ReadLine();
+
+            file.Close();
+
+            Console.WriteLine(line);
 
             // Se présenter
-            contact.SePresenter();
+            bool versionCourte;
+
+            versionCourte = true;
+
+            contact.SePresenter(versionCourte);
              
+            /*
             // récupérer le numéro de téléphone du contact
             contact.GetTelephone();
 
@@ -35,7 +54,7 @@ namespace Objet
             // Se présenter
             contact.SePresenter();
             enseignant.SePresenter(); // polymorphisme !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+            */
         }
     }
 }
