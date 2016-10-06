@@ -20,5 +20,13 @@ namespace Objet
         {
             this.cursus = cursus;
         }
+
+        public void SePresenter(bool versionCourte)
+        {
+            String message;
+            base.SePresenter(versionCourte);
+            message = " , j'apprends le " + cursus;
+            Console.WriteLine(message);
+        }
     }
 }

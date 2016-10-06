@@ -11,32 +11,40 @@ namespace Objet
     {
         static void Main(string[] args)
         {
-            // INSTANCE(S) des classes
+            /*/ INSTANCE(S) des classes
             
-            Contact enseignant = new Enseignant("Groot", "Je s'appele", "06363737364", "pereira.mickael1@gmail.com");
+            Contact enseignant = new Enseignant("Groot", "Je s'appele", "06363737364", "pereira.mickael1@gmail.com", "français");
             Contact contact = new Contact("jean", "NomDeFamille", "06363737364", "pereira.mickael1@gmail.com");
             //contact.EnregistrerContact();
             
-            StreamReader file;
-            string line;
+            StreamReader fichier;
+            string ligne;
+            List<string> liste = new List<string>();
 
             // Lire le fichier
-            file = new StreamReader("C:/Users/Mike/Documents/Visual Studio 2015/Projects/Objet/Contacts.txt", true);
+            fichier = new StreamReader("C:/Users/Mike/Documents/Visual Studio 2015/Projects/Objet/Contacts.txt", true);
 
             // system IO a convertir en string
-            line = file.ReadLine();
+            while ((ligne = fichier.ReadLine()) != null)
+            {
+                liste.Add(ligne); // ajouter ligne à la liste.
+                Console.WriteLine(ligne); // écrire dans la console ligne par ligne.
+            }
+            fichier.Close();
 
-            file.Close();
-
-            Console.WriteLine(line);
+            // DEBUG ///////////////////////////////       
+            Console.WriteLine(contact);
+            ////////////////////////////////////////
 
             // Se présenter
+            /*
             bool versionCourte;
 
             versionCourte = true;
 
             contact.SePresenter(versionCourte);
-             
+            */
+
             /*
             // récupérer le numéro de téléphone du contact
             contact.GetTelephone();
@@ -50,11 +58,16 @@ namespace Objet
             
             // enregistrer le nouveau numéro de télephone
             contact.SetTelephone(nouveau_telephone);
-
-            // Se présenter
-            contact.SePresenter();
-            enseignant.SePresenter(); // polymorphisme !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             */
+            // Se présenter
+            
+           // enseignant.SePresenter(); // polymorphisme !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            Contact nouvelEnseignant = new Enseignant("jean", "kader", "00000000", "llllf@ggr.com", "francais");
+            bool versionCourte;
+
+            versionCourte = true;
+            nouvelEnseignant.SePresenter(versionCourte);
         }
     }
 }

@@ -10,10 +10,10 @@ namespace Objet
     class Contact
     {
         // attributs !!!!!!!!!!!!!! PRIVES !!!!!!!!!!!!!!!
-        private String nom;
-        private String prenom;
-        private String telephone;
-        private String mail;
+        protected String nom;
+        protected String prenom;
+        protected String telephone;
+        protected String mail;
         private DateTime dateDeNaissance;
 
         // Accesseur get , accesseur set
@@ -44,9 +44,16 @@ namespace Objet
             this.nom = nom;
         }
 
-        public Contact(String line)
+        public Contact(String ligne)
         {
+            // decouper la chaine de caractere en mot
+           // string[] personData = File.ReadAllLines(ligne);
 
+            // premier mot chaine de caractere
+            //   this.prenom =            
+            // this.nom = 
+            //this.mail = 
+            //this.telephone = 
         }
 
         // Méthodes
@@ -63,9 +70,16 @@ namespace Objet
         {
             String message;
 
-            message = "Version courte : ";
+            if (versionCourte == true)
+            { 
+                message = "Version courte : ";
+                Console.WriteLine(message + prenom + " " + nom);
+            }
 
-            Console.WriteLine(message + prenom + " " + nom);
+            else
+            {
+                SePresenter();
+            }
         }
 
         public void SetTelephone(String nouveau_telephone)
