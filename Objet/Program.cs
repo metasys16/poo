@@ -10,9 +10,11 @@ namespace Objet
     {
         static void Main(string[] args)
         {
-            // INSTANCE(S) de la classe contact
+            // INSTANCE(S) des classes
             Contact contact = new Contact("Moulhoud", "Jean", "06363737364", "pereira.mickael1@gmail.com");
-            Contact contact2 = new Contact("Groot", "Je s'appele", "06363737364", "pereira.mickael1@gmail.com");
+            Contact enseignant = new Enseignant("Groot", "Je s'appele", "06363737364", "pereira.mickael1@gmail.com");
+
+            contact.EnregistrerContact();
 
             // Se présenter
             contact.SePresenter();
@@ -32,6 +34,8 @@ namespace Objet
 
             // Se présenter
             contact.SePresenter();
+            enseignant.SePresenter(); // polymorphisme !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         }
     }
 }

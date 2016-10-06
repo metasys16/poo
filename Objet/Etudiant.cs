@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Objet
 {
-    class Etudiant
+    class Etudiant : Contact
     {
+        private String cursus;
+
+        // Constructeur de la classe fille Etudiant
+        public Etudiant(string nom, string prenom, string telephone, string mail) : base(nom, prenom, telephone, mail)
+        {
+        }
+
+        // mutateur 
+        public void SetCursus(String cursus)
+        {
+            this.cursus = cursus;
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Objet
 {
@@ -55,6 +56,20 @@ namespace Objet
         public String GetTelephone()
         {
             return this.telephone;
+        }
+
+        public void EnregistrerContact()
+        {
+            StreamWriter file;
+
+            // instance de la classe StreamWriter
+            file = new StreamWriter("C:/Users/Mike/Documents/Visual Studio 2015/Projects/Objet/Contacts.txt", true);
+            
+            //file.Write(nom + " " + prenom + " " + mail + " " + telephone);
+            file.WriteLine(nom + " " + prenom + " " + mail + " " + telephone);
+
+            // fermer le flux 
+            file.Close();
         }
     }
 }
