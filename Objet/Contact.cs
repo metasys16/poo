@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace Objet
 {
@@ -29,6 +28,42 @@ namespace Objet
             }
         }
 
+        public string Prenom  // propriété Nom
+        {
+            get
+            {
+                return prenom;
+            }
+            set
+            {
+                prenom = value;
+            }
+        }
+
+        public string Mail  // propriété Nom
+        {
+            get
+            {
+                return mail;
+            }
+            set
+            {
+                mail = value;
+            }
+        }
+
+        public string Telephone  // propriété Nom
+        {
+            get
+            {
+                return telephone;
+            }
+            set
+            {
+                telephone = value;
+            }
+        }
+
         // Constructeur
         public Contact(String nom, String prenom, String telephone, String mail)
         {
@@ -44,42 +79,32 @@ namespace Objet
             this.nom = nom;
         }
 
-        public Contact(String ligne)
-        {
-            // decouper la chaine de caractere en mot
-           // string[] personData = File.ReadAllLines(ligne);
-
-            // premier mot chaine de caractere
-            //   this.prenom =            
-            // this.nom = 
-            //this.mail = 
-            //this.telephone = 
-        }
-
         // Méthodes
-        public void SePresenter()
+        public string SePresenter()
         {
             String message;
 
             message = "COUCOU je suis : ";
 
-            Console.WriteLine(message + prenom + " " + nom + " telephone : " + telephone);
+            return message + prenom + " " + nom + " telephone : " + telephone;
         }
 
-        public void SePresenter(bool versionCourte)
+        public string SePresenter(bool versionCourte)
         {
             String message;
 
             if (versionCourte == true)
             { 
                 message = "Version courte : ";
-                Console.WriteLine(message + prenom + " " + nom);
+                message = message + prenom + " " + nom;
             }
 
             else
             {
-                SePresenter();
+                message = SePresenter();
             }
+
+            return message;
         }
 
         public void SetTelephone(String nouveau_telephone)
@@ -90,20 +115,6 @@ namespace Objet
         public String GetTelephone()
         {
             return this.telephone;
-        }
-
-        public void EnregistrerContact()
-        {
-            StreamWriter file;
-
-            // instance de la classe StreamWriter
-            file = new StreamWriter("C:/Users/Mike/Documents/Visual Studio 2015/Projects/Objet/Contacts.txt", true);
-            
-            //file.Write(nom + " " + prenom + " " + mail + " " + telephone);
-            file.WriteLine(nom + " " + prenom + " " + mail + " " + telephone);
-
-            // fermer le flux 
-            file.Close();
         }
     }
 }

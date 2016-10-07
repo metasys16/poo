@@ -1,4 +1,3 @@
-Mr1 Test serialize@gmail.com 06363737364
-Mr2 Test serialize@gmail.com 06363737364
-Mr3 Test serialize@gmail.com 06363737364
-Mr4 Test serialize@gmail.com 06363737364
+mouloud;jean;moulouddubled@gmail.com;0676543564
+les Argonauts;argo;argonauts56@hotmail.com;909746646774-6554-545
+Objet.Contact

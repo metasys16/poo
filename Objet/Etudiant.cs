@@ -11,8 +11,9 @@ namespace Objet
         private String cursus;
 
         // Constructeur de la classe fille Etudiant
-        public Etudiant(string nom, string prenom, string telephone, string mail) : base(nom, prenom, telephone, mail)
+        public Etudiant(string nom, string prenom, string telephone, string mail, string cursus) : base(nom, prenom, telephone, mail)
         {
+            this.cursus = cursus;
         }
 
         // mutateur 
@@ -25,7 +26,7 @@ namespace Objet
         {
             String message;
             base.SePresenter(versionCourte);
-            message = " , j'apprends le " + cursus;
+            message = "j'apprends le " + cursus;
             Console.WriteLine(message);
         }
     }

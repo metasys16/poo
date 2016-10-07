@@ -25,7 +25,7 @@ namespace Objet
         {
             String message;
             base.SePresenter(versionCourte);
-            message = " , j'enseigne le : " + matiere;
+            message = "j'enseigne le : " + matiere;
             Console.WriteLine(message);
 
         }
